@@ -10,10 +10,11 @@ SUFFIX_MAP = {
     "compressedFiles": [".zip", ".rar", ".7z", ".gz", ".tar.gz"],
     "audio": [".mp3", ".wav", ".aiff", ".wma", ".aac", ".flac", ".ogg"],
     "pdf": [".pdf"],
+    "code": [".py", ".c", ".cpp", ".js", ".ts", ".html", ".css"]
 }
+p = Path("~/Downloads").expanduser()
 
 def main():
-    p = Path("~/dev/test-project").expanduser()
     watchFileChange(p)
 
 class NewFileHandler(FileSystemEventHandler):
@@ -34,7 +35,7 @@ def handleFile(p):
             process(file, "etc")
 
 def process(file, tp):
-    des_dir = Path(f"~/dev/test-project/{tp}/").expanduser()
+    des_dir = Path(f"~/Downloads/{tp}/").expanduser()
     des = des_dir / file.name
     des.parent.mkdir(parents=True, exist_ok=True)
     index = 1
