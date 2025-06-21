@@ -12,15 +12,13 @@ SUFFIX_MAP = {
     "pdf": [".pdf"],
     "code": [".py", ".c", ".cpp", ".js", ".ts", ".html", ".css"]
 }
-p = Path("~/Downloads").expanduser()
-
 def main():
-    watchFileChange(p)
+    watchFileChange(Path("~/Downloads").expanduser())
 
 class NewFileHandler(FileSystemEventHandler):
     def on_created(self, event):
         if not event.is_directory:
-            handleFile(p)
+            handleFile(Path(event.src_path).parent)
 
 def handleFile(p):
     for file in p.glob("*"):
