@@ -24,6 +24,7 @@ class NewFileHandler(FileSystemEventHandler):
             handleFile(Path(event.src_path).parent)
 
 def handleFile(p):
+    time.sleep(1)
     for file in p.glob("*"):
         if not file.is_file():
             continue
