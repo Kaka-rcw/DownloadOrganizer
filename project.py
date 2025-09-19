@@ -3,7 +3,7 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import time
 SUFFIX_MAP = {
-    "images": [".jpg", ".png", ".svg", ".gif"],
+    "images": [".jpg", ".png", ".svg", ".gif", ".avif"],
     "videos": [".mp4", ".mov", ".avi", ".wmv", ".mkv"],
     "textFiles": [".doc", ".txt", ".md", ".log", ".csv", ".json", ".xml"],
     "books": [".epub", ".mobi"],
@@ -17,6 +17,9 @@ def main():
 
 class NewFileHandler(FileSystemEventHandler):
     def on_created(self, event):
+        if not event.is_directory:
+            handleFile(Path(event.src_path).parent)
+    def on_moved(self, event):
         if not event.is_directory:
             handleFile(Path(event.src_path).parent)
 
