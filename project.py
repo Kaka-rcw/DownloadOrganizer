@@ -3,7 +3,7 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import time
 SUFFIX_MAP = {
-    "images": [".jpg", ".png", ".svg", ".gif", ".avif"],
+    "images": [".jpg", ".png", ".svg", ".gif", ".avif", ".jpeg"],
     "videos": [".mp4", ".mov", ".avi", ".wmv", ".mkv"],
     "textFiles": [".doc", ".txt", ".md", ".log", ".csv", ".json", ".xml"],
     "books": [".epub", ".mobi"],
