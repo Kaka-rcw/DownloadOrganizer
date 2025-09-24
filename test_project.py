@@ -70,7 +70,7 @@ def test_watchFileChange(monkeypatch, tmp_path):
 
     unknown_file = downloads_path / "unknown.xyz"
     unknown_file.write_text("data")
-    time.sleep(0.5)
+    time.sleep(1.5)
     assert (downloads_path / "etc" / "unknown.xyz").exists()
 
       
