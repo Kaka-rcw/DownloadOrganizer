@@ -7,7 +7,7 @@ SUFFIX_MAP = {
     "videos": [".mp4", ".mov", ".avi", ".wmv", ".mkv"],
     "textFiles": [".doc", ".txt", ".md", ".log", ".csv", ".json", ".xml"],
     "books": [".epub", ".mobi"],
-    "compressedFiles": [".zip", ".rar", ".7z", ".gz", ".tar.gz"],
+    "compressedFiles": [".zip", ".rar", ".7z", ".gz"],
     "audio": [".mp3", ".wav", ".aiff", ".wma", ".aac", ".flac", ".ogg"],
     "pdf": [".pdf"],
     "code": [".py", ".c", ".cpp", ".js", ".ts", ".html", ".css"]
