@@ -54,7 +54,7 @@ The script operates in three main steps:
    - Runs continuously so the folder never becomes messy again. 
 
 ---
- 
+
 ## Design choices:
 
 One of the main design considerations in this project was whether to use Python’s modern **`pathlib`** module or the traditional **`os`** module for handling file paths and operations. Both approaches are valid, but after testing and comparing, I chose to rely primarily on `pathlib` for the following reasons:  
@@ -81,3 +81,13 @@ Ultimately, I chose **`pathlib` as the primary tool** because it offers:
 - Cleaner code,  
 - Reduced risk of platform-specific bugs, and  
 - A more Pythonic design.
+
+---
+
+### Running in the Background
+
+To run the program in the background (so it continues organizing while you do other work):
+
+```bash
+python3 project.py &
+
